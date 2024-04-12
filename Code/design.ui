@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1114</width>
+    <height>756</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">* {
+background-color: #D4D2D5;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>530</y>
+      <width>691</width>
+      <height>164</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetDefaultConstraint</enum>
+     </property>
+     <item>
+      <widget class="QPushButton" name="connect_ip_button">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">* {
+	background-color: rgb(80, 80, 80);
+	font: 75 12pt &quot;JetBrains Mono NL Bold&quot;;
+	color: &quot;white&quot;;
+	border-radius: &quot;10px&quot;;
+	padding-top: &quot;8px&quot;;
+	padding-bottom: &quot;8px&quot;;
+	margin: &quot;4px&quot;;
+	box-shadow&quot; &quot;0 0 5px rgb(0, 0, 0, 0.4)&quot;;
+}</string>
+       </property>
+       <property name="text">
+        <string>Connect IP Camera</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="load_video_button">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">* {
+	background-color: rgb(80, 80, 80);
+	font: 75 12pt &quot;JetBrains Mono NL Bold&quot;;
+	color: &quot;white&quot;;
+	border-radius: &quot;10px&quot;;
+	padding-top: &quot;8px&quot;;
+	padding-bottom: &quot;8px&quot;;
+	margin: &quot;4px&quot;;
+	box-shadow&quot; &quot;0 0 5px rgb(0, 0, 0, 0.4)&quot;;
+}</string>
+       </property>
+       <property name="text">
+        <string>Load Video</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="load_image_button">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">* {
+	background-color: rgb(80, 80, 80);
+	font: 75 12pt &quot;JetBrains Mono NL Bold&quot;;
+	color: &quot;white&quot;;
+	border-radius: &quot;10px&quot;;
+	padding-top: &quot;8px&quot;;
+	padding-bottom: &quot;8px&quot;;
+	margin: &quot;4px&quot;;
+	box-shadow&quot; &quot;0 0 5px rgb(0, 0, 0, 0.4)&quot;;
+}</string>
+       </property>
+       <property name="text">
+        <string>Load Image</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="ipcam_window">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>30</y>
+      <width>841</width>
+      <height>421</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1114</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

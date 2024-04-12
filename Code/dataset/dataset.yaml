@@ -1,0 +1,9 @@
+#train and val data
+train: ../../dataset/images/train/
+val: ../../dataset/images/val/
+
+#number of classes
+nc: 10
+
+#class names
+names: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]

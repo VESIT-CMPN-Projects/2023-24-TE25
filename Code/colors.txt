@@ -1,0 +1,4 @@
+background-color: #D1DEDE
+text-color: #1D201F
+progress-bar-backgound-color: #86a8a8
+progress-color: #68726f
