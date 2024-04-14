@@ -16,9 +16,9 @@ if not db.open():
 
 
 def signup(query, username, email, password):
-    if not query.exec_("""create table user (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, username VARCHAR(100) NOT NULL, email VARCHAR(100) NOT NULL, password VARCHAR(100) NOT NULL);"""):
-        print(f"Error creating table: {query.lastError().text()}")
-        return
+    # if not query.exec_("""create table user (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, username VARCHAR(100) NOT NULL, email VARCHAR(100) NOT NULL, password VARCHAR(100) NOT NULL);"""):
+    #     print(f"Error creating table: {query.lastError().text()}")
+    #     return
     print(username, email, password)
     try:
         query.exec_(

@@ -3,6 +3,8 @@ import cv2
 from threading import Thread  # library for implementing multi-threaded processing
 import queue
 import numpy as np
+import time
+
 
 #importing required libraries for YOLO Implementation
 import torch
@@ -41,29 +43,39 @@ class IpThread(QThread):
             exit(0)
         fps_input_stream = int(self.vcap.get(5))
         print("FPS of webcam hardware/input stream: {}".format(fps_input_stream))
-            
+        
         # reading a single frame from vcap stream for initializing
         self.grabbed, self.frame = self.vcap.read()
         if self.grabbed is False:
             print('[Exiting] No more frames to read')
             exit(0)
+
+        prev=0
             
         while True:
             if self.stopped:
                 break
+
+            frame_rate = 10
+            time_elapsed=time.time()-prev
+
             ret, self.frame = self.vcap.read()
             if not ret:
                 break
-            if not self.q.empty():
-                try:
-                    self.q.get_nowait()   # discard previous (unprocessed) frame
-                    # print('emptying the queue')
-                except queue.Empty:
-                    print("empty")
-            self.q.put(self.frame)
-            self.new_frame.emit([self.frame, self.label_id])
-            if self.start_detections:
-                self.detections.start()
+
+            if time_elapsed > 1.0 /frame_rate:
+                prev=time.time()
+
+                if not self.q.empty():
+                    try:
+                        self.q.get_nowait()   # discard previous (unprocessed) frame
+                        # print('emptying the queue')
+                    except queue.Empty:
+                        print("empty")
+                self.q.put(self.frame)
+                self.new_frame.emit([self.frame, self.label_id])
+                if self.start_detections:
+                    self.detections.start()
     
     def start_detection(self):
         self.start_detections = True        

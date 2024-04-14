@@ -71,13 +71,13 @@ class LoginWindow(QMainWindow):
         password = self.password_login.text()
 
         status = login(self.query, self.username, password)
-        # if not status:
-        #     return self.set_login_status(
-        #         "Login Failed!",
-        #         "Invalid email or password. Please try again",
-        #         "color: red; font-weight: bold;",
-        #         True,
-        #     )
+        if not status:
+            return self.set_login_status(
+                "Login Failed!",
+                "Invalid email or password. Please try again",
+                "color: red; font-weight: bold;",
+                True,
+            )
         status = self.set_login_status(
             "Login Successful!",
             "Login Successful!",
